@@ -1,0 +1,3 @@
+    chmod +x ./2_Domen_script.txt — сделать файл исполняемым.
+    ./2_Domen_script.txt — выполнение файла.
+

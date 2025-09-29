@@ -1,0 +1,9 @@
+[Unit]
+Description=Automount Fresh series
+
+[Automount]
+Where=/mnt/base
+TimeoutIdleSec=900
+
+[Install]
+WantedBy=multi-user.target
