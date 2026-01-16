@@ -1,9 +1,0 @@
-[Unit]
-Description=Automount Fresh series
-
-[Automount]
-Where=/mnt/kodeks_client
-TimeoutIdleSec=900
-
-[Install]
-WantedBy=multi-user.target
