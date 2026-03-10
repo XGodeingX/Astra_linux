@@ -10,15 +10,14 @@
 
 Буква	Папка		    Отдел
 
-| Буква | Папка |  Отдел |
-| ------------- | ------------- |
-| P | \\law\base |
-P	   \\law\base	    Все
-X	   \\cons\consplus	Все
-Y	   \\fsrv\mail	    Все
-V	   \\bug\buxgalt$   Бухгалтерия
-Q	   \\fsrv\ujkh	    УЖКХ
-Z	   \\bug\kadr$	    Кадры
+Буква  Папка            Отдел 
+P	     \\law\base	      Все
+X	     \\cons\consplus	Все
+Y	     \\fsrv\mail	    Все
+V	     \\bug\buxgalt$   Бухгалтерия
+Q	     \\fsrv\ujkh	    УЖКХ
+Z	     \\bug\kadr$	    Кадры
+
 
 
 
