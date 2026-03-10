@@ -36,15 +36,42 @@ deb https://dl.astralinux.ru/astra/stable/1.8_x86-64/main-repository/ 1.8_x86-64
 deb https://dl.astralinux.ru/astra/stable/1.8_x86-64/extended-repository/ 1.8_x86-64 main contrib non-free non-free-firmware
 EOF
 
-            # Фиксация пакетов
-            sudo apt-mark hold \
-                linux-6.1-generic \
-                linux-astra-modules-6.1.90-1-generic \
-                linux-headers-6.1-generic \
-                linux-headers-6.1.90-1 \
-                linux-headers-6.1.90-1-generic \
-                linux-image-6.1-generic \
-                linux-image-6.1.90-1-generic
+            # Выбор версии ядра для блокировки
+                local kernel_choice
+                kernel_choice=$(whiptail --title "Блокировка ядра" \
+                    --menu "Выберите версию ядра для блокировки:" 15 60 3 \
+                    "1" "Заблокировать ядро 6.1.90 (по умолчанию)" \
+                    "2" "Заблокировать ядро 6.12.34" \
+                    "3" "Не блокировать ядро" 3>&1 1>&2 2>&3)
+
+                case $kernel_choice in
+                    1)
+                        sudo apt-mark hold \
+                            linux-6.1-generic \
+                            linux-astra-modules-6.1.90-1-generic \
+                            linux-headers-6.1-generic \
+                            linux-headers-6.1.90-1 \
+                            linux-headers-6.1.90-1-generic \
+                            linux-image-6.1-generic \
+                            linux-image-6.1.90-1-generic
+                        msg_done "Ядро 6.1.90 заблокировано"
+                        ;;
+                    2)
+                        sudo apt-mark hold \
+                            linux-6.12-generic \
+                            linux-astra-modules-6.12.34-1-generic \
+                            linux-headers-6.12-generic \
+                            linux-headers-6.12.34-1 \
+                            linux-headers-6.12.34-1-generic \
+                            linux-image-6.12-generic \
+                            linux-image-6.12.34-1-generic
+                        msg_done "Ядро 6.12.34 заблокировано"
+                        ;;
+                    3)
+                        msg_done "Блокировка ядра не выбрана"
+                        ;;
+                esac
+
                 sudo apt update
                 sudo astra-update -A -r -T
                 sudo apt autoremove -y
