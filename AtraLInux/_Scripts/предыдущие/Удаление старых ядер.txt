@@ -1,0 +1,5 @@
+#!/bin/bash
+pkgs=`dpkg -l 2> /dev/null | egrep "^ii\s*linux-image-[456]\.[[:digit:]]+\.[[:digit:]]+-[[:digit:]]+-" | cut -d " " -f3 | grep -v ^linux-image-$(uname -r | cut -d '-' -f1-2)`
+set -e
+[ -n "$pkgs" ] && apt remove $pkgs
+rm -f /boot/old-*
