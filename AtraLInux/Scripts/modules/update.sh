@@ -20,6 +20,16 @@ deb https://download.astralinux.ru/astra/stable/1.7_x86-64/repository-update/ 1.
 deb https://download.astralinux.ru/astra/stable/1.7_x86-64/repository-base/ 1.7_x86-64 main contrib non-free
 deb https://download.astralinux.ru/astra/stable/1.7_x86-64/repository-extended/ 1.7_x86-64 main contrib non-free
 EOF
+		sudo apt-mark hold \
+                            linux-6.1-generic \
+                            linux-astra-modules-6.1.124-1-generic \
+                            linux-headers-6.1-generic \
+                            linux-headers-6.1.124-1 \
+                            linux-headers-6.1.124-1-generic \
+                            linux-image-6.1-generic \
+                            linux-image-6.1.124-1-generic
+                        msg_done "Ядро 6.1.124 заблокировано"
+
                 sudo apt update
                 sudo astra-update -A -r -T
                 sudo apt autoremove -y
