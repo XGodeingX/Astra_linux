@@ -1,0 +1,13 @@
+http://dir/client - DirectumRX
+
+https://id.astra.ru - АстраID
+
+https://esia.gosuslugi.ru - Госуслуги.
+
+https://egisso.ru - ЕГИССО
+
+https://mev.kemobl.ru - Digit МЭВ
+
+https://www.rts-tender.ru - PTC-tтендер
+
+https://zakupki.gov.ru - ЕИС Закупки
